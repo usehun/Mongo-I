@@ -11,6 +11,7 @@ WE NEED TO SHARE THE SAME DB SO NICO CAN CHECK OUT EVERYBODYS PROJECT.
 const YOUR_USERNAME = null;
 
 const MovieSchema = mongoose.Schema({
+  
   title: {
     type: String,
     required: true
@@ -27,8 +28,12 @@ const MovieSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  genres: [String]
-});
+  genres: [
+    {
+      type: String,
+      required: true
+    }
+  ]
 
 if (YOUR_USERNAME === null || typeof YOUR_USERNAME !== "string") {
   /*
